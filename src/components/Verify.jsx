@@ -8,7 +8,8 @@ const Verify = () => {
       content: (
         <div>
           <p className="mb-4 text-sm font-normal text-gray-300">
-            Begin by uploading your document through our secure interface. You can:
+            Begin by uploading your document through our secure interface. You
+            can:
           </p>
           <div className="mb-6">
             <div className="flex items-center gap-2 text-sm text-gray-300">

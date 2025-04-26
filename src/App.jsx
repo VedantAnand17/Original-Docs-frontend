@@ -5,7 +5,7 @@ import { WagmiProvider } from "wagmi";
 import { config } from "./config";
 import Home from "./Page/Home";
 import ConnectWallet from "./components/ConnectWallet";
-import Client from "./components/Client";
+import Client from "./components/Client.jsx";
 import Admin from "./components/Admin";
 
 const queryClient = new QueryClient();
