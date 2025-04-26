@@ -4,6 +4,7 @@ import Tutorial from './../components/Tutorial';
 import Upload from './../components/Upload';
 import Working from './../components/Working';
 import { NoiseDemo } from '@/components/Cursor';
+import Verify from '@/components/Verify';
 
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
       <Upload />
       <Working />
       <Tutorial/>
+      <Verify/>
     </div>
   )
 }

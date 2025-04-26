@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './ui/Button';
 
 function Tutorial() {
   return (
@@ -12,10 +13,15 @@ function Tutorial() {
           Learn how to get started easily and quickly!
         </p>
       </div>
-        
+          
+
+
+          
+            <Button className="pt-14"/>
+          
       
           {/* Optional Note */}
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm pt-14">
             Click the button to open the full tutorial video!
           </p>
         </div>
