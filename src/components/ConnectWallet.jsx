@@ -10,7 +10,7 @@ const ConnectWallet = () => {
   if (address) {
     return (
       <div className="wallet-container ">
-        <div className="address-display text-white">
+        <div className="address-display text-black">
           Connected: {address.slice(0, 6)}...{address.slice(-4)}
         </div>
         <Button

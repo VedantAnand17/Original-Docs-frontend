@@ -170,17 +170,17 @@ const Client = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6 text-[#98C1D9]">Verify Your Document</h2>
+      <h2 className="text-2xl font-bold mb-6 text-gray-700">Verify Your Document</h2>
       
       {/* Verification mode toggle */}
       <div className="flex justify-center mb-8">
-        <div className="inline-flex rounded-md shadow-sm bg-[#1c1c4d] p-1" role="group">
+        <div className="inline-flex rounded-md shadow-sm bg-gray-100 p-1" role="group">
           <button
             type="button"
             className={`px-4 py-2 text-sm font-medium rounded-l-lg ${
               verificationMode === 'single'
-                ? 'bg-indigo-600 text-white'
-                : 'text-gray-300 hover:bg-[#2a2a5a] hover:text-white'
+                ? 'bg-blue-500 text-white'
+                : 'text-gray-700 hover:bg-gray-200 hover:text-gray-900'
             }`}
             onClick={() => handleModeChange('single')}
           >
@@ -190,8 +190,8 @@ const Client = () => {
             type="button"
             className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
               verificationMode === 'batch'
-                ? 'bg-indigo-600 text-white'
-                : 'text-gray-300 hover:bg-[#2a2a5a] hover:text-white'
+                ? 'bg-blue-500 text-white'
+                : 'text-gray-700 hover:bg-gray-200 hover:text-gray-900'
             }`}
             onClick={() => handleModeChange('batch')}
           >
@@ -206,12 +206,12 @@ const Client = () => {
           <Form onFileChange={handleFileChange} />
           
           {documentHash && (
-            <div className="bg-[#1c1c4d] p-6 rounded-lg mt-8 w-full max-w-md">
-              <p className="text-sm text-gray-300 mb-2">Document Hash:</p>
-              <p className="font-mono text-cyan-400 text-xs break-all">{documentHash}</p>
+            <div className="bg-gray-100 p-6 rounded-lg mt-8 w-full max-w-md border border-gray-200">
+              <p className="text-sm text-gray-700 mb-2">Document Hash:</p>
+              <p className="font-mono text-blue-600 text-xs break-all">{documentHash}</p>
               <button
                 disabled={isVerifyingSingle}
-                className="mt-4 w-full py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none disabled:bg-gray-600"
+                className="mt-4 w-full py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none disabled:bg-gray-400"
               >
                 {isVerifyingSingle ? 'Verifying...' : 'Verify Document'}
               </button>
@@ -219,13 +219,13 @@ const Client = () => {
           )}
 
           {isSingleError && (
-            <div className="bg-red-900/30 text-red-300 p-4 rounded-lg mt-4 w-full max-w-md">
+            <div className="bg-red-100 text-red-700 p-4 rounded-lg mt-4 w-full max-w-md border border-red-200">
               Error: Document hash not found or contract error occurred
             </div>
           )}
 
           {isVerified !== null && (
-            <div className={`p-4 rounded-lg mt-4 w-full max-w-md ${isVerified ? 'bg-green-900/30 text-green-300' : 'bg-red-900/30 text-red-300'}`}>
+            <div className={`p-4 rounded-lg mt-4 w-full max-w-md ${isVerified ? 'bg-green-100 text-green-700 border border-green-200' : 'bg-red-100 text-red-700 border border-red-200'}`}>
               {isVerified ? (
                 <>
                   <p className="font-semibold">✓ Document Verified!</p>
@@ -238,8 +238,8 @@ const Client = () => {
           )}
 
           {file && (
-            <div className="bg-[#1c1c4d] p-4 rounded-lg shadow-md text-center mt-4 w-full max-w-md">
-              <p className="text-sm text-gray-300">File: {file.name}</p>
+            <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center mt-4 w-full max-w-md border border-gray-200">
+              <p className="text-sm text-gray-700">File: {file.name}</p>
             </div>
           )}
         </div>
@@ -252,24 +252,24 @@ const Client = () => {
           <div className="mb-8">
             <div 
               {...getRootProps()} 
-              className="border-2 border-dashed border-[#3d3d7a] rounded-lg p-6 cursor-pointer hover:bg-[#1a1a46] transition-colors duration-300"
+              className="border-2 border-dashed border-gray-300 rounded-lg p-6 cursor-pointer hover:bg-gray-50 transition-colors duration-300"
             >
               <input {...getInputProps()} />
               <div className="text-center">
-                <p className="text-[#98C1D9]">Drag and drop multiple files here, or click to select files</p>
-                <p className="text-sm text-gray-400 mt-2">Verify multiple documents at once</p>
+                <p className="text-gray-700">Drag and drop multiple files here, or click to select files</p>
+                <p className="text-sm text-gray-500 mt-2">Verify multiple documents at once</p>
               </div>
             </div>
           </div>
           
           {/* File list */}
           {files.length > 0 && (
-            <div className="bg-[#1c1c4d] p-6 rounded-lg mt-6 mb-6">
+            <div className="bg-gray-100 p-6 rounded-lg mt-6 mb-6 border border-gray-200">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-medium text-[#98C1D9]">Files to Verify ({files.length})</h3>
+                <h3 className="text-lg font-medium text-gray-700">Files to Verify ({files.length})</h3>
                 <button
                   onClick={clearAll}
-                  className="text-sm text-red-400 hover:text-red-300 transition-colors"
+                  className="text-sm text-red-500 hover:text-red-700 transition-colors"
                 >
                   Clear All
                 </button>
@@ -279,15 +279,15 @@ const Client = () => {
                 {files.map((file, index) => (
                   <div 
                     key={index} 
-                    className="flex justify-between items-center p-2 mb-2 bg-[#25254d] rounded"
+                    className="flex justify-between items-center p-2 mb-2 bg-white rounded border border-gray-200"
                   >
                     <div className="truncate flex-1">
-                      <p className="text-sm text-gray-300">{file.name}</p>
-                      <p className="text-xs text-cyan-400 truncate">{documentHashes[index]}</p>
+                      <p className="text-sm text-gray-700">{file.name}</p>
+                      <p className="text-xs text-blue-600 truncate">{documentHashes[index]}</p>
                     </div>
                     <button 
                       onClick={() => removeFile(index)}
-                      className="ml-2 text-gray-400 hover:text-red-400"
+                      className="ml-2 text-gray-500 hover:text-red-500"
                     >
                       ✕
                     </button>
@@ -298,7 +298,7 @@ const Client = () => {
               <button
                 onClick={handleVerifyBatch}
                 disabled={isVerifyingBatch || documentHashes.length === 0}
-                className="mt-4 w-full py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none disabled:bg-gray-600"
+                className="mt-4 w-full py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none disabled:bg-gray-400"
               >
                 {isVerifyingBatch ? 'Verifying...' : 'Verify All Documents'}
               </button>
@@ -308,29 +308,29 @@ const Client = () => {
           {/* Verification Results */}
           {isVerificationComplete && verificationResults.length > 0 && (
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4 text-[#98C1D9]">Verification Results</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-700">Verification Results</h3>
               
               <div className="space-y-4">
                 {verificationResults.map((result, index) => (
                   <div 
                     key={index} 
-                    className={`p-4 rounded-lg ${result.isVerified ? 'bg-green-900/30 border border-green-800/50' : 'bg-red-900/30 border border-red-800/50'}`}
+                    className={`p-4 rounded-lg ${result.isVerified ? 'bg-green-100 border border-green-200' : 'bg-red-100 border border-red-200'}`}
                   >
                     <div className="flex justify-between items-center">
-                      <h4 className={`font-medium ${result.isVerified ? 'text-green-300' : 'text-red-300'}`}>
+                      <h4 className={`font-medium ${result.isVerified ? 'text-green-700' : 'text-red-700'}`}>
                         {result.file.name}
                       </h4>
-                      <span className={`text-sm font-semibold rounded-full px-2 py-1 ${result.isVerified ? 'bg-green-800/50 text-green-200' : 'bg-red-800/50 text-red-200'}`}>
+                      <span className={`text-sm font-semibold rounded-full px-2 py-1 ${result.isVerified ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>
                         {result.isVerified ? '✓ Verified' : '✗ Not Verified'}
                       </span>
                     </div>
                     
-                    <p className="text-xs font-mono text-gray-400 mt-2 break-all">
+                    <p className="text-xs font-mono text-gray-600 mt-2 break-all">
                       Hash: {result.hash}
                     </p>
                     
                     {result.timestamp && (
-                      <p className="text-sm mt-2 text-gray-300">
+                      <p className="text-sm mt-2 text-gray-700">
                         Registered on: {result.timestamp}
                       </p>
                     )}
@@ -339,7 +339,7 @@ const Client = () => {
               </div>
               
               <div className="mt-6 text-center">
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-500">
                   {verificationResults.filter(r => r.isVerified).length} of {verificationResults.length} documents verified
                 </p>
               </div>
@@ -347,7 +347,7 @@ const Client = () => {
           )}
 
           {isBatchError && (
-            <div className="bg-red-900/30 text-red-300 p-4 rounded-lg mt-4">
+            <div className="bg-red-100 text-red-700 p-4 rounded-lg mt-4 border border-red-200">
               Error: Failed to verify document hashes. The smart contract may be unavailable.
             </div>
           )}

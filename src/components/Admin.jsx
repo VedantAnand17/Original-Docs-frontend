@@ -116,14 +116,14 @@ const Admin = () => {
 
   if (!isConnected) {
     return (
-      <div className="text-center p-8">
+      <div className="text-center p-8 mt-16"> {/* Added mt-16 for navbar spacing */}
         <p className="text-xl text-[#98C1D9]">Please connect your wallet to register documents</p>
       </div>
     );
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto mt-16"> {/* Added mt-16 for navbar spacing */}
       <h2 className="text-2xl font-bold mb-6 text-[#98C1D9]">Register Document Hashes</h2>
       
       {/* Single file upload */}

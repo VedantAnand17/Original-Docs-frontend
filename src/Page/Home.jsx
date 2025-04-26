@@ -9,7 +9,7 @@ function Home() {
     <div className="bg-white">
       <Client />
       <TimelineDemo />
-      <Working />
+      {/* <Working /> */}
       <Tutorial />
     </div>
   );

@@ -3,13 +3,13 @@ import Button from "./ui/Buttonn";
 
 function Tutorial() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-white">
       {/* Heading */}
       <div className="text-center mb-8">
-        <h2 className="text-5xl font-extrabold text-white mb-4">
+        <h2 className="text-5xl font-extrabold text-gray-800 mb-4">
           🎥 Watch The Tutorial
         </h2>
-        <p className="text-lg text-rose-100">
+        <p className="text-lg text-gray-600">
           Learn how to get started easily and quickly!
         </p>
       </div>

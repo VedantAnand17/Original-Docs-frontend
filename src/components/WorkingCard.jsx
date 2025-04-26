@@ -30,9 +30,9 @@ const steps = [
 
 const WorkingCard = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center p-8">
+    <div className="min-h-screen flex flex-col items-center p-8 bg-white">
       {/* Heading */}
-      <h1 className="text-white text-4xl font-bold mb-16 text-center">
+      <h1 className="text-gray-800 text-4xl font-bold mb-16 text-center">
         How's it working under the hood 🚀
       </h1>
 
@@ -50,10 +50,10 @@ const WorkingCard = () => {
             {/* Left box (Step) */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative w-full md:w-2/5 bg-gray-950 p-10 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden group border border-gray-800"
+              className="relative w-full md:w-2/5 bg-gray-100 p-10 rounded-3xl shadow-lg flex items-center justify-center overflow-hidden group border border-gray-200"
             >
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#6b21a8] via-[#4f46e5] to-[#6b21a8] animate-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <h2 className="text-white text-3xl font-extrabold z-10 group-hover:text-black transition-colors duration-500">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-100 via-purple-100 to-blue-100 animate-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <h2 className="text-gray-800 text-3xl font-extrabold z-10 group-hover:text-gray-900 transition-colors duration-500">
                 {item.step}
               </h2>
             </motion.div>
@@ -61,14 +61,14 @@ const WorkingCard = () => {
             {/* Right box (Title and Description) */}
             <motion.div
               whileHover={{ scale: 1.03 }}
-              className="relative w-full md:w-3/5 bg-gray-950 p-10 rounded-3xl shadow-2xl flex flex-col justify-center overflow-hidden group border border-gray-800"
+              className="relative w-full md:w-3/5 bg-gray-100 p-10 rounded-3xl shadow-lg flex flex-col justify-center overflow-hidden group border border-gray-200"
             >
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#6b21a8] via-[#4f46e5] to-[#6b21a8] animate-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-100 via-purple-100 to-blue-100 animate-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <h3 className="text-white text-2xl font-semibold mb-4 group-hover:text-black transition-colors duration-500">
+                <h3 className="text-gray-800 text-2xl font-semibold mb-4 group-hover:text-gray-900 transition-colors duration-500">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-base leading-relaxed group-hover:text-black transition-colors duration-500">
+                <p className="text-gray-600 text-base leading-relaxed group-hover:text-gray-800 transition-colors duration-500">
                   {item.description}
                 </p>
               </div>
