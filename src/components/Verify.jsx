@@ -10,7 +10,8 @@ const steps = [
     id: 2,
     title: "Verify",
     description: "Click on the verify button to verify",
-  }]
+  },
+];
 const Verify = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-12 text-white">
@@ -63,4 +64,3 @@ const Verify = () => {
 };
 
 export default Verify;
-

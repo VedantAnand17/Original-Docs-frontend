@@ -1,8 +1,8 @@
 import React from 'react'
 // import {Upload, Working, Tutorial} from 
-import Tutorial from './../components/Tutorial';
-import Upload from './../components/Upload';
-import Working from './../components/Working';
+import Tutorial from '../components/Tutorial';
+import Upload from '../components/Upload';
+import Working from '../components/Working';
 import { NoiseDemo } from '@/components/Cursor';
 import Verify from '@/components/Verify';
 

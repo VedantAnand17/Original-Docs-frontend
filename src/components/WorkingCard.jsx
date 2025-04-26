@@ -1,17 +1,32 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const steps = [
-  { step: "Step 1", title: "Title 1", description: "This is the description for Step 1." },
-  { step: "Step 2", title: "Title 2", description: "This is the description for Step 2." },
-  { step: "Step 3", title: "Title 3", description: "This is the description for Step 3." },
-  { step: "Step 4", title: "Title 4", description: "This is the description for Step 4." }
+  {
+    step: "Step 1",
+    title: "Title 1",
+    description: "This is the description for Step 1.",
+  },
+  {
+    step: "Step 2",
+    title: "Title 2",
+    description: "This is the description for Step 2.",
+  },
+  {
+    step: "Step 3",
+    title: "Title 3",
+    description: "This is the description for Step 3.",
+  },
+  {
+    step: "Step 4",
+    title: "Title 4",
+    description: "This is the description for Step 4.",
+  },
 ];
 
 const WorkingCard = () => {
   return (
     <div className="min-h-screen flex flex-col items-center p-8">
-      
       {/* Heading */}
       <h1 className="text-white text-4xl font-bold mb-16 text-center">
         How's it working under the hood 🚀
@@ -19,7 +34,6 @@ const WorkingCard = () => {
 
       {/* Steps Section */}
       <div className="flex flex-col gap-24 w-full max-w-5xl">
-
         {steps.map((item, index) => (
           <motion.div
             key={index}
@@ -57,7 +71,6 @@ const WorkingCard = () => {
             </motion.div>
           </motion.div>
         ))}
-
       </div>
     </div>
   );

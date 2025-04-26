@@ -1,10 +1,8 @@
-import React from 'react'
-import WorkingCard from './WorkingCard'
+import React from "react";
+import WorkingCard from "./WorkingCard";
 
 function Working() {
-  return (
-    <WorkingCard/>
-  )
+  return <WorkingCard />;
 }
 
-export default Working
+export default Working;
