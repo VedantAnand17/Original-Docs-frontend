@@ -4,6 +4,9 @@ import { ethers } from 'ethers';
 import { ABI } from '../abi';
 import Form from './UploadIcon';
 import { useDropzone } from 'react-dropzone';
+import DocumentVerificationIllustration from './illustrations/DocumentVerification';
+import BlockchainVerificationIllustration from './illustrations/BlockchainVerification';
+import AnimatedIllustration from './illustrations/AnimatedIllustration';
 
 const contractAddress = "0x793D9Daac0CEDebbC4d0E8d7a4004719FF199baa";
 
@@ -171,7 +174,23 @@ const Client = () => {
   return (
     <div className="max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-gray-700">Verify Your Document</h2>
-      
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Document Verification Made Simple
+          </h1>
+          <p className="text-lg text-gray-600">
+            Securely verify your documents using blockchain technology. Fast, reliable, and tamper-proof.
+          </p>
+        </div>
+        <div className="flex justify-center items-center">
+          <AnimatedIllustration>
+            <DocumentVerificationIllustration className="w-full max-w-md" />
+          </AnimatedIllustration>
+        </div>
+      </div>
+
       {/* Verification mode toggle */}
       <div className="flex justify-center mb-8">
         <div className="inline-flex rounded-md shadow-sm bg-gray-100 p-1" role="group">
