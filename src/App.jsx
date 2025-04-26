@@ -1,32 +1,32 @@
 import React from "react";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { WagmiProvider } from 'wagmi';
-import { config } from './config';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { WagmiProvider } from "wagmi";
+import { config } from "./config";
 import Home from "./Page/Home";
-import ConnectWallet from './components/ConnectWallet';
-import Client from './components/Client';
-import Admin from './components/Admin';
+import ConnectWallet from "./components/ConnectWallet";
+import Client from "./components/Client";
+import Admin from "./components/Admin";
 
 const queryClient = new QueryClient();
 
 function Navigation() {
   return (
     <nav className="flex gap-6 p-4 bg-[#141432] rounded-lg shadow-sm mb-6">
-      <Link 
-        to="/" 
+      <Link
+        to="/"
         className="text-[#98C1D9] hover:text-blue-400 font-medium transition-colors"
       >
         Home
       </Link>
-      <Link 
-        to="/client" 
+      <Link
+        to="/client"
         className="text-[#98C1D9] hover:text-blue-400 font-medium transition-colors"
       >
         Verify Document
       </Link>
-      <Link 
-        to="/admin" 
+      <Link
+        to="/admin"
         className="text-[#98C1D9] hover:text-blue-400 font-medium transition-colors"
       >
         Register Document

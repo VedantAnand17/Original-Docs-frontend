@@ -5,22 +5,26 @@ const steps = [
   {
     step: "Step 1",
     title: "Upload Document",
-    description: "Upload your document (PDF, image, etc). The system will calculate a unique hash for your document.",
+    description:
+      "Upload your document (PDF, image, etc). The system will calculate a unique hash for your document.",
   },
   {
     step: "Step 2",
     title: "Generate Hash",
-    description: "We use the keccak256 algorithm to generate a unique cryptographic hash that represents your document.",
+    description:
+      "We use the keccak256 algorithm to generate a unique cryptographic hash that represents your document.",
   },
   {
     step: "Step 3",
     title: "Verify on Blockchain",
-    description: "The system checks if your document hash exists on the blockchain using a smart contract.",
+    description:
+      "The system checks if your document hash exists on the blockchain using a smart contract.",
   },
   {
     step: "Step 4",
     title: "View Results",
-    description: "See verification results including when the document was registered on the blockchain, if verified.",
+    description:
+      "See verification results including when the document was registered on the blockchain, if verified.",
   },
 ];
 

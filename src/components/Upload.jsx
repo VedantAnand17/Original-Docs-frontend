@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useReadContract } from 'wagmi';
-import { ethers } from 'ethers';
-import { ABI } from '../abi';
+import { useReadContract } from "wagmi";
+import { ethers } from "ethers";
+import { ABI } from "../abi";
 import Form from "./UploadIcon";
 
 const contractAddress = "0x793D9Daac0CEDebbC4d0E8d7a4004719FF199baa";
@@ -13,10 +13,14 @@ function Upload() {
   const [isVerified, setIsVerified] = useState(null);
   const [timestamp, setTimestamp] = useState(null);
 
-  const { data: isHashVerified, isError, isLoading: isVerifying } = useReadContract({
+  const {
+    data: isHashVerified,
+    isError,
+    isLoading: isVerifying,
+  } = useReadContract({
     address: contractAddress,
     abi: contractABI,
-    functionName: 'verifyHash',
+    functionName: "verifyHash",
     args: documentHash ? [documentHash] : undefined,
     enabled: !!documentHash,
   });
@@ -31,10 +35,10 @@ function Upload() {
 
   const formatTimestamp = (timestamp) => {
     const date = new Date(Number(timestamp) * 1000);
-    return new Intl.DateTimeFormat('en-IN', {
-      timeZone: 'Asia/Kolkata',
-      dateStyle: 'full',
-      timeStyle: 'long'
+    return new Intl.DateTimeFormat("en-IN", {
+      timeZone: "Asia/Kolkata",
+      dateStyle: "full",
+      timeStyle: "long",
     }).format(date);
   };
 
@@ -70,20 +74,22 @@ function Upload() {
       <div className="text-[#c5cae9] mt-4 justify-center flex flex-col items-center text-3xl">
         Authentic at Heart. Original by Nature. Verified by Truth
       </div>
-      
+
       <div className="flex flex-col items-center pt-16">
         <Form onFileChange={handleFileChange} />
-        
+
         {documentHash && (
           <div className="bg-[#1c1c4d] p-6 rounded-lg mt-8 w-80 max-w-full">
             <p className="text-sm text-gray-300 mb-2">Document Hash:</p>
-            <p className="font-mono text-cyan-400 text-xs break-all">{documentHash}</p>
+            <p className="font-mono text-cyan-400 text-xs break-all">
+              {documentHash}
+            </p>
             <button
               onClick={handleVerify}
               disabled={isVerifying}
               className="mt-4 w-full py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none disabled:bg-gray-600"
             >
-              {isVerifying ? 'Verifying...' : 'Verify Document'}
+              {isVerifying ? "Verifying..." : "Verify Document"}
             </button>
           </div>
         )}
@@ -95,7 +101,13 @@ function Upload() {
         )}
 
         {isVerified !== null && (
-          <div className={`p-4 rounded-lg mt-4 w-80 max-w-full ${isVerified ? 'bg-green-900/30 text-green-300' : 'bg-red-900/30 text-red-300'}`}>
+          <div
+            className={`p-4 rounded-lg mt-4 w-80 max-w-full ${
+              isVerified
+                ? "bg-green-900/30 text-green-300"
+                : "bg-red-900/30 text-red-300"
+            }`}
+          >
             {isVerified ? (
               <>
                 <p className="font-semibold">✓ Document Verified!</p>
@@ -112,9 +124,11 @@ function Upload() {
             <p className="text-sm text-gray-300">File: {file.name}</p>
           </div>
         )}
-        
+
         <div className="bg-[#1c1c4d] p-4 rounded-lg shadow-md text-center mt-8 mb-16 w-80 max-w-full">
-          <p className="text-sm text-gray-300 mb-2">Sample document you can use to verify:</p>
+          <p className="text-sm text-gray-300 mb-2">
+            Sample document you can use to verify:
+          </p>
           <a
             href="https://pdfhost.io/v/PMzZyzVEdM_AdhaarCard"
             target="_blank"
