@@ -1,7 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const Form = () => {
+const Form = ({ onFileChange }) => {
+  const handleFileSelect = (event) => {
+    if (onFileChange) {
+      onFileChange(event);
+    }
+  };
+
   return (
     <StyledWrapper>
       <label htmlFor="file" className="custum-file-upload">
@@ -25,9 +31,9 @@ const Form = () => {
           </svg>
         </div>
         <div className="text">
-          <span>Click to upload image</span>
+          <span>Click to upload document</span>
         </div>
-        <input id="file" type="file" />
+        <input id="file" type="file" onChange={handleFileSelect} />
       </label>
     </StyledWrapper>
   );
