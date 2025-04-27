@@ -1,4 +1,5 @@
-import React from "react";
+import { motion } from 'framer-motion';
+import { AnimatedFade } from '@/components/ui/AnimatedFade';
 import { Timeline } from "@/components/ui/timeline";
 
 export function TimelineDemo() {
@@ -7,22 +8,22 @@ export function TimelineDemo() {
       title: "Step 1: Upload Document",
       content: (
         <div>
-          <p className="mb-4 text-sm font-normal text-gray-700">
+          <p className="mb-4 text-md font-normal text-gray-700">
             Upload your document (PDF, image, etc). The system will calculate a
             unique hash for your document:
           </p>
           <div className="mb-6">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Drag and drop files directly
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Select files from your device
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Support for multiple file formats
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid md:grid-cols-2 gap-2">
             <img
               src="https://res.cloudinary.com/dduzorsii/image/upload/v1745703138/ezgif.com-cut_1_vag4xm.gif"
               alt="Document Upload"
@@ -45,22 +46,22 @@ export function TimelineDemo() {
       title: "Step 2: Generate Hash",
       content: (
         <div>
-          <p className="mb-4 text-sm font-normal text-gray-700">
+          <p className="mb-4 text-md font-normal text-gray-700">
             We use the keccak256 algorithm to generate a unique cryptographic
             hash that represents your document.
           </p>
           <div className="mb-6">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Secure hashing algorithm
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Unique digital fingerprint
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Tamper-proof document verification
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid md:grid-cols-2 gap-2">
             <img
               src="https://res.cloudinary.com/dduzorsii/image/upload/v1745703835/ezgif.com-cut_2_gfzkky.gif"
               alt="Hash Generation"
@@ -83,22 +84,22 @@ export function TimelineDemo() {
       title: "Step 3: Verify on Blockchain",
       content: (
         <div>
-          <p className="mb-4 text-sm font-normal text-gray-700">
+          <p className="mb-4 text-md font-normal text-gray-700">
             The system checks if your document hash exists on the blockchain
             using a smart contract.
           </p>
           <div className="mb-6">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Immutable blockchain verification
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Smart contract integration
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Decentralized authentication
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid md:grid-cols-2 gap-2">
             <img
               src="https://res.cloudinary.com/dduzorsii/image/upload/v1745704342/ezgif.com-video-to-gif-converter_1_gnn73w.gif"
               alt="Blockchain Verification"
@@ -120,21 +121,21 @@ export function TimelineDemo() {
       title: "Step 4: View Results",
       content: (
         <div>
-          <p className="mb-4 text-sm font-normal text-gray-700">
+          <p className="mb-4 text-md font-normal text-gray-700">
             Check verification status and registration time on the blockchain.
           </p>
           <div className="mb-6">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Instant verification results
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Registration timestamp
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-md text-gray-600">
               ✅ Detailed document history
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid md:grid-cols-2 gap-2">
             <img
               src="https://res.cloudinary.com/dduzorsii/image/upload/v1745704342/ezgif.com-video-to-gif-converter_1_gnn73w.gif"
               alt="Blockchain Verification"
@@ -156,10 +157,20 @@ export function TimelineDemo() {
 
   return (
     <div className="relative w-full overflow-clip p-8">
-      <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-        How It Works
-      </h2>
-      <Timeline data={data} />
+      <AnimatedFade>
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          How It Works
+        </h2>
+      </AnimatedFade>
+      
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <Timeline data={data} />
+      </motion.div>
     </div>
   );
 }
