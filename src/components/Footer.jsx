@@ -25,7 +25,7 @@ const Footer = () => {
             <h3 className="font-semibold text-gray-900 mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="text-gray-600">support@ogdoc.com</li>
-              <li className="text-gray-600">+1 (555) 123-4567</li>
+              <li className="text-gray-600">+91 79019 82476</li>
             </ul>
           </div>
         </div>

@@ -22,13 +22,20 @@ export function TimelineDemo() {
               ✅ Support for multiple file formats
             </div>
           </div>
-          <div className="grid grid-cols-1">
+          <div className="grid grid-cols-2 gap-2">
             <img
-              src="https://images.unsplash.com/photo-1618044733300-9472054094ee?q=80&w=1471&auto=format&fit=crop"
+              src="https://res.cloudinary.com/dduzorsii/image/upload/v1745703138/ezgif.com-cut_1_vag4xm.gif"
               alt="Document Upload"
               width={500}
               height={300}
-              className="h-32 w-full rounded-lg object-cover shadow-lg"
+              className="h-58 w-full rounded-lg object-cover shadow-lg"
+            />
+            <img
+              src="https://res.cloudinary.com/dduzorsii/image/upload/v1745703671/Screencastfrom2025-04-2703-03-541-ezgif.com-cut_fexyfh.gif"
+              alt="Document Upload"
+              width={500}
+              height={300}
+              className="h-58 w-full rounded-lg object-cover shadow-lg"
             />
           </div>
         </div>
@@ -53,13 +60,20 @@ export function TimelineDemo() {
               ✅ Tamper-proof document verification
             </div>
           </div>
-          <div className="grid grid-cols-1">
+          <div className="grid grid-cols-2 gap-2">
             <img
-              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
+              src="https://res.cloudinary.com/dduzorsii/image/upload/v1745703835/ezgif.com-cut_2_gfzkky.gif"
               alt="Hash Generation"
               width={500}
               height={300}
-              className="h-32 w-full rounded-lg object-cover shadow-lg"
+              className="h-80 w-full rounded-lg object-cover shadow-lg"
+            />
+            <img
+              src="https://res.cloudinary.com/dduzorsii/image/upload/v1745703941/ezgif.com-video-to-gif-converter_mgk1mf.gif"
+              alt="Hash Generation"
+              width={500}
+              height={300}
+              className="h-80 w-full rounded-lg object-cover shadow-lg"
             />
           </div>
         </div>
@@ -84,13 +98,19 @@ export function TimelineDemo() {
               ✅ Decentralized authentication
             </div>
           </div>
-          <div className="grid grid-cols-1">
+          <div className="grid grid-cols-2 gap-2">
             <img
-              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1632&auto=format&fit=crop"
+              src="https://res.cloudinary.com/dduzorsii/image/upload/v1745704342/ezgif.com-video-to-gif-converter_1_gnn73w.gif"
               alt="Blockchain Verification"
               width={500}
               height={300}
-              className="h-32 w-full rounded-lg object-cover shadow-lg"
+              className="h-80 w-full rounded-lg object-cover shadow-lg"
+            />
+            <img
+              src="https://res.cloudinary.com/dduzorsii/image/upload/v1745704419/ezgif.com-video-to-gif-converter_2_cxxjit.gif"
+              width={500}
+              height={300}
+              className="h-80 w-full rounded-lg object-cover shadow-lg"
             />
           </div>
         </div>
@@ -114,13 +134,19 @@ export function TimelineDemo() {
               ✅ Detailed document history
             </div>
           </div>
-          <div className="grid grid-cols-1">
+          <div className="grid grid-cols-2 gap-2">
             <img
-              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop"
-              alt="View Results"
+              src="https://res.cloudinary.com/dduzorsii/image/upload/v1745704342/ezgif.com-video-to-gif-converter_1_gnn73w.gif"
+              alt="Blockchain Verification"
               width={500}
               height={300}
-              className="h-32 w-full rounded-lg object-cover shadow-lg"
+              className="h-80 w-full rounded-lg object-cover shadow-lg"
+            />
+            <img
+              src="https://res.cloudinary.com/dduzorsii/image/upload/v1745704419/ezgif.com-video-to-gif-converter_2_cxxjit.gif"
+              width={500}
+              height={300}
+              className="h-80 w-full rounded-lg object-cover shadow-lg"
             />
           </div>
         </div>

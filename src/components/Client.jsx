@@ -5,7 +5,6 @@ import { ABI } from '../abi';
 import Form from './UploadIcon';
 import { useDropzone } from 'react-dropzone';
 import DocumentVerificationIllustration from './illustrations/DocumentVerification';
-import BlockchainVerificationIllustration from './illustrations/BlockchainVerification';
 import AnimatedIllustration from './illustrations/AnimatedIllustration';
 
 const contractAddress = "0x793D9Daac0CEDebbC4d0E8d7a4004719FF199baa";
@@ -27,12 +26,13 @@ const Client = () => {
   const [isVerificationComplete, setIsVerificationComplete] = useState(false);
 
   // Single document verification
-  const { data: isHashVerified, isError: isSingleError, isLoading: isVerifyingSingle } = useReadContract({
+  const { data: isHashVerified, isError: isSingleError, isLoading: isVerifyingSingle, refetch: refetchSingle } = useReadContract({
     address: contractAddress,
     abi: ABI,
     functionName: 'verifyHash',
     args: documentHash ? [documentHash] : undefined,
-    enabled: !!documentHash && verificationMode === 'single',
+    enabled: false, // Changed to false to prevent auto-execution
+    watch: false
   });
 
   // Batch verification
@@ -55,8 +55,12 @@ const Client = () => {
       const [verified, timestampBigInt] = isHashVerified;
       setIsVerified(verified);
       setTimestamp(verified ? formatTimestamp(timestampBigInt) : null);
+    } else if (documentHash && isSingleError) {
+      // Handle unverified documents same way as batch verification
+      setIsVerified(false);
+      setTimestamp(null);
     }
-  }, [isHashVerified]);
+  }, [isHashVerified, isSingleError, documentHash, verificationMode]);
 
   // Handle batch verification result
   React.useEffect(() => {
@@ -135,9 +139,27 @@ const Client = () => {
       const result = await refetch();
       if (result.data) {
         setIsVerificationComplete(true);
+      } else {
+        // Handle case where verification fails
+        const results = files.map((file, index) => ({
+          file: file,
+          hash: documentHashes[index],
+          isVerified: false,
+          timestamp: null
+        }));
+        setVerificationResults(results);
+        setIsVerificationComplete(true);
       }
     } catch (error) {
-      console.error("Error verifying documents in batch:", error);
+      // Handle error case by marking all documents as unverified
+      const results = files.map((file, index) => ({
+        file: file,
+        hash: documentHashes[index],
+        isVerified: false,
+        timestamp: null
+      }));
+      setVerificationResults(results);
+      setIsVerificationComplete(true);
     }
   };
 
@@ -167,6 +189,23 @@ const Client = () => {
       setFile(null);
       setDocumentHash(null);
       setIsVerified(null);
+      setTimestamp(null);
+    }
+  };
+
+  // Add a handle verify function for single document
+  const handleVerifySingle = async () => {
+    if (!documentHash) return;
+    try {
+      const result = await refetchSingle();
+      if (result.data) {
+        const [verified, timestampBigInt] = result.data;
+        setIsVerified(verified);
+        setTimestamp(verified ? formatTimestamp(timestampBigInt) : null);
+      }
+    } catch (error) {
+      console.error("Error verifying document:", error);
+      setIsVerified(false);
       setTimestamp(null);
     }
   };
@@ -229,17 +268,12 @@ const Client = () => {
               <p className="text-sm text-gray-700 mb-2">Document Hash:</p>
               <p className="font-mono text-blue-600 text-xs break-all">{documentHash}</p>
               <button
+                onClick={handleVerifySingle}
                 disabled={isVerifyingSingle}
                 className="mt-4 w-full py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none disabled:bg-gray-400"
               >
                 {isVerifyingSingle ? 'Verifying...' : 'Verify Document'}
               </button>
-            </div>
-          )}
-
-          {isSingleError && (
-            <div className="bg-red-100 text-red-700 p-4 rounded-lg mt-4 w-full max-w-md border border-red-200">
-              Error: Document hash not found or contract error occurred
             </div>
           )}
 
@@ -362,12 +396,6 @@ const Client = () => {
                   {verificationResults.filter(r => r.isVerified).length} of {verificationResults.length} documents verified
                 </p>
               </div>
-            </div>
-          )}
-
-          {isBatchError && (
-            <div className="bg-red-100 text-red-700 p-4 rounded-lg mt-4 border border-red-200">
-              Error: Failed to verify document hashes. The smart contract may be unavailable.
             </div>
           )}
         </div>
