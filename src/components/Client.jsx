@@ -407,6 +407,21 @@ const Client = () => {
           )}
         </div>
       )}
+
+      {/* Add this under your existing verification UI: */}
+      <div className="bg-gray-100 m-auto p-4 rounded-lg shadow-md text-center mt-8 mb-16 w-80 max-w-full border border-gray-200">
+        <p className="text-sm text-gray-700 mb-2">
+          Sample document you can use to verify:
+        </p>
+        <a
+          href="https://pdfhost.io/v/PMzZyzVEdM_AdhaarCard"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 font-medium hover:underline"
+        >
+          Click here to download
+        </a>
+      </div>
     </div>
   );
 };
