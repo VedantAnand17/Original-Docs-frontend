@@ -75,7 +75,7 @@ function Upload() {
             Welcome to <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">Veri-Doc</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
-            F*ck Forgery, Stay Original.
+            Secure Document Verification Platform powered by Blockchain Technology
           </p>
           <div className="flex justify-center gap-4 mb-16">
             <button className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium">

@@ -225,7 +225,7 @@ const Client = () => {
               Document Verification Made Simple
             </h1>
             <p className="text-lg text-gray-600">
-              Securely verify your documents using blockchain technology. Fast, reliable, and tamper-proof.
+              F*ck Forgery, Stay Original.
             </p>
           </div>
         </AnimatedFade>
