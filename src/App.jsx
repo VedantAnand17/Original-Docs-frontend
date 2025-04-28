@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
 import { WagmiProvider } from "wagmi";
 import { config } from "./config";
 import Home from "./Page/Home";
@@ -119,11 +119,13 @@ function AppContent() {
       <div className="min-h-screen px-4 py-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <Navigation />
-          {showConnectWallet && <div className="mt-16"><ConnectWallet /></div>} {/* Added mt-16 */}
-          <main className="pt-16"> {/* Already has pt-16 */}
+          {showConnectWallet && <div className="mt-16"><ConnectWallet /></div>}
+          <main className="pt-16">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/admin" element={<Admin />} />
+              {/* Redirect all unused routes to '/' */}
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
         </div>
