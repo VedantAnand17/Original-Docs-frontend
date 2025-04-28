@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { AnimatedFade } from '@/components/ui/AnimatedFade';
+import { motion } from "framer-motion";
+import { AnimatedFade } from "@/components/ui/AnimatedFade";
 import { Timeline } from "@/components/ui/timeline";
 
 export function TimelineDemo() {
@@ -162,7 +162,7 @@ export function TimelineDemo() {
           How It Works
         </h2>
       </AnimatedFade>
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

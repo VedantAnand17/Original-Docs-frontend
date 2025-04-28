@@ -111,7 +111,9 @@ const Verify = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-16 bg-white">
       <div className="w-full">
-        <h1 className="text-4xl font-bold text-center mb-16 text-gray-800">How to Verify?</h1>
+        <h1 className="text-4xl font-bold text-center mb-16 text-gray-800">
+          How to Verify?
+        </h1>
         <Timeline data={verificationSteps} />
       </div>
     </div>

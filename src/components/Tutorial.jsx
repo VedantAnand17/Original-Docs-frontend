@@ -24,36 +24,38 @@ function Tutorial() {
         {!isPlaying ? (
           <div className="relative">
             {/* Thumbnail (first frame of video) */}
-            <video 
+            <video
               className="w-full rounded-2xl"
               poster="https://res.cloudinary.com/dduzorsii/video/upload/v1745706793/Screencast_from_2025-04-27_03-51-08_oouivt.jpg"
             >
-              <source src="https://res.cloudinary.com/dduzorsii/video/upload/v1745706793/Screencast_from_2025-04-27_03-51-08_oouivt.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/dduzorsii/video/upload/v1745706793/Screencast_from_2025-04-27_03-51-08_oouivt.mp4"
+                type="video/mp4"
+              />
             </video>
-            
+
             {/* Play Button Overlay */}
             <button
               onClick={handlePlayVideo}
               className="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-40 hover:bg-opacity-50 transition-all duration-300"
             >
               <div className="w-20 h-20 flex items-center justify-center rounded-full bg-white bg-opacity-90 hover:bg-opacity-100 hover:scale-110 transition-all duration-300">
-                <svg 
-                  className="w-10 h-10 text-blue-600 translate-x-0.5" 
-                  fill="currentColor" 
+                <svg
+                  className="w-10 h-10 text-blue-600 translate-x-0.5"
+                  fill="currentColor"
                   viewBox="0 0 20 20"
                 >
-                  <path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.344-5.891a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                  <path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.344-5.891a1.5 1.5 0 000-2.538L6.3 2.84z" />
                 </svg>
               </div>
             </button>
           </div>
         ) : (
-          <video 
-            className="w-full rounded-2xl"
-            controls
-            autoPlay
-          >
-            <source src="https://res.cloudinary.com/dduzorsii/video/upload/v1745706793/Screencast_from_2025-04-27_03-51-08_oouivt.mp4" type="video/mp4" />
+          <video className="w-full rounded-2xl" controls autoPlay>
+            <source
+              src="https://res.cloudinary.com/dduzorsii/video/upload/v1745706793/Screencast_from_2025-04-27_03-51-08_oouivt.mp4"
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </video>
         )}

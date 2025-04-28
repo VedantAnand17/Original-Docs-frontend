@@ -29,7 +29,7 @@ graph TD
     A[Upload Document] -->|PDF/Image| B[Generate Hash]
     B -->|keccak256| C[Store on Blockchain]
     C -->|Smart Contract| D[Document Registered]
-    
+
     E[Verify Document] -->|Upload for Verification| F[Generate Hash]
     F -->|Compare| G{Check Blockchain}
     G -->|Match Found| H[Document Verified ✓]
@@ -39,16 +39,19 @@ graph TD
 ### 📝 Process Overview
 
 1. **Document Upload**
+
    - Drag & drop or click to upload documents
    - Supports PDF, images, and other document formats
    - Secure client-side processing
 
 2. **Hash Generation**
+
    - Uses keccak256 cryptographic algorithm
    - Creates unique document fingerprint
    - Ensures document integrity and privacy
 
 3. **Blockchain Storage**
+
    - Hash stored on Ethereum blockchain
    - Immutable record creation
    - Smart contract integration for security
@@ -62,6 +65,7 @@ graph TD
 ## 🛠️ Tech Stack
 
 - **Frontend**
+
   - React.js
   - Tailwind CSS
   - Framer Motion
@@ -84,12 +88,14 @@ graph TD
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/yourusername/veri-doc.git
 cd veri-doc
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 # or
@@ -97,11 +103,13 @@ yarn install
 ```
 
 3. Create environment variables
+
 ```bash
 cp .env.example .env
 ```
 
 4. Start development server
+
 ```bash
 npm run dev
 # or

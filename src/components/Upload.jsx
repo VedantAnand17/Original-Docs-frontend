@@ -72,10 +72,14 @@ function Upload() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6 font-heading">
-            Welcome to <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">Veri-Doc</span>
+            Welcome to{" "}
+            <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+              Veri-Doc
+            </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
-            Secure Document Verification Platform powered by Blockchain Technology
+            Secure Document Verification Platform powered by Blockchain
+            Technology
           </p>
           <div className="flex justify-center gap-4 mb-16">
             <button className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium">
@@ -89,12 +93,14 @@ function Upload() {
 
         {/* Main Content */}
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-900">Upload Documents</h2>
-          
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-900">
+            Upload Documents
+          </h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Form onFileChange={handleFileChange} />
           </div>
-          
+
           {/* Status messages */}
           <div className="mt-6 space-y-4">
             {documentHash && (

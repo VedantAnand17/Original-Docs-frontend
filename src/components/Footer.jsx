@@ -1,5 +1,5 @@
-import React from 'react';
-import Logo from './Logo';
+import React from "react";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -9,16 +9,29 @@ const Footer = () => {
           <div className="col-span-1 sm:col-span-2">
             <Logo className="mb-4" />
             <p className="text-gray-600 max-w-md text-sm sm:text-base">
-              Secure document verification platform powered by blockchain technology.
-              Verify the authenticity of your documents with confidence.
+              Secure document verification platform powered by blockchain
+              technology. Verify the authenticity of your documents with
+              confidence.
             </p>
           </div>
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm sm:text-base">
-              <li><a href="/" className="text-gray-600 hover:text-blue-500">Home</a></li>
-              <li><a href="/" className="text-gray-600 hover:text-blue-500">Verify Document</a></li>
-              <li><a href="/admin" className="text-gray-600 hover:text-blue-500">Register Document</a></li>
+              <li>
+                <a href="/" className="text-gray-600 hover:text-blue-500">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/" className="text-gray-600 hover:text-blue-500">
+                  Verify Document
+                </a>
+              </li>
+              <li>
+                <a href="/admin" className="text-gray-600 hover:text-blue-500">
+                  Register Document
+                </a>
+              </li>
             </ul>
           </div>
           <div>

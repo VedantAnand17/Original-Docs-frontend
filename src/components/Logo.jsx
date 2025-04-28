@@ -1,10 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const Logo = ({ className = '' }) => {
+const Logo = ({ className = "" }) => {
   return (
-    <Link to="/" className={`flex items-center gap-2 ${className} hover:opacity-80 transition-opacity`}>
+    <Link
+      to="/"
+      className={`flex items-center gap-2 ${className} hover:opacity-80 transition-opacity`}
+    >
       <motion.svg
         className="w-8 h-8"
         viewBox="0 0 24 24"
