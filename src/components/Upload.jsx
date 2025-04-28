@@ -72,7 +72,7 @@ function Upload() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6 font-heading">
-            Welcome to <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">OG Doc</span>
+            Welcome to <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">Veri-Doc</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
             Secure Document Verification Platform powered by Blockchain Technology

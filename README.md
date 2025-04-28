@@ -1,4 +1,4 @@
-# 🔐 OG Doc - Blockchain Document Verification Platform
+# 🔐 Veri-Doc - Blockchain Document Verification Platform
 
 <div align="center">
 
@@ -9,7 +9,7 @@
 
 A secure, decentralized platform for document verification using blockchain technology.
 
-[Live Demo](https://og-doc.vercel.app/) · [Report Bug](https://github.com/yourusername/og-doc/issues) · [Request Feature](https://github.com/yourusername/og-doc/issues)
+[Live Demo](https://veri-doc.vercel.app/) · [Report Bug](https://github.com/yourusername/veri-doc/issues) · [Request Feature](https://github.com/vedantanand17/veri-doc/issues)
 
 </div>
 
@@ -85,8 +85,8 @@ graph TD
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/og-doc.git
-cd og-doc
+git clone https://github.com/yourusername/veri-doc.git
+cd veri-doc
 ```
 
 2. Install dependencies
@@ -160,7 +160,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com -->
 
-Project Link: [hithub.com/VedantAnand17/Original-Docs-frontend](ithub.com/VedantAnand17/Original-Docs-frontend/)
+Project Link: [github.com/VedantAnand17/Veri-Doc-frontend](github.com/VedantAnand17/Veri-Doc-frontend/)
 
 ## 🙏 Acknowledgments
 
