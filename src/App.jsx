@@ -145,7 +145,7 @@ function AppContent() {
         <div className="max-w-7xl mx-auto">
           <Navigation />
           {showConnectWallet && (
-            <div className="mt-16">
+            <div className="mt-16 flex justify-center">
               <ConnectButton />
             </div>
           )}
