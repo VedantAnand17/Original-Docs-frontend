@@ -11,11 +11,12 @@ import {
 import { WagmiProvider } from "wagmi";
 import { config } from "./config";
 import Home from "./Page/Home";
-import ConnectWallet from "./components/ConnectWallet";
 import Admin from "./components/Admin";
 import Logo from "./components/Logo";
 import Footer from "./components/Footer";
 import { motion } from "framer-motion";
+import "@rainbow-me/rainbowkit/styles.css";
+import { RainbowKitProvider, ConnectButton } from "@rainbow-me/rainbowkit";
 
 const queryClient = new QueryClient();
 
@@ -145,7 +146,7 @@ function AppContent() {
           <Navigation />
           {showConnectWallet && (
             <div className="mt-16">
-              <ConnectWallet />
+              <ConnectButton />
             </div>
           )}
           <main className="pt-16">
@@ -167,9 +168,11 @@ function App() {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <AppContent />
-        </BrowserRouter>
+        <RainbowKitProvider>
+          <BrowserRouter>
+            <AppContent />
+          </BrowserRouter>
+        </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );
